@@ -1,0 +1,42 @@
+{
+	"days": [{
+		"day": "Mon",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": true
+	}, {
+		"day": "Tues",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": true
+	}, {
+		"day": "Wed",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": true
+	}, {
+		"day": "Thurs",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": true
+	}, {
+		"day": "Fri",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": true
+	}, {
+		"day": "Sat",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": false
+	}, {
+		"day": "Sun",
+		"departAmTime": 480,
+		"departPmTime": 1020,
+        "isCommuting": false
+	}],
+	"user": {
+		"name": "Fred",
+		"id":3
+	}
+}
