@@ -87,8 +87,8 @@ Modify the `index.html`, 'scripts/app.js', and styles/app.css files provided and
 The details of the implementation are up to you but here are some things we would like to see:
  - Well organized javascript and css files. (split up the various components you are making so it makes sense to look at)
  - You only need to compare 2 schedules (assume the first one you load is the current user), but we have provided multiple files. If you can make it compare 2+ schedules we will be impressed.
- - Making use of the new Componenet api found in angular 1.5.x as opposed to just plain diretives.
+ - Making use of the new Component api found in angular 1.5.x as opposed to just plain diretives.
  - Using newer js featres (ES6) is fine and we love to see that you are interested in the latest tech.
- - Creating a build process to package you scripts / styles and/or using something like SystemJS to load multiple js files.
+ - Creating a build process to package your scripts / styles and/or using something like SystemJS to load multiple js files.
  - Object oriented Javascript, knowlege of things like prototype and the module pattern are good to see.
 
