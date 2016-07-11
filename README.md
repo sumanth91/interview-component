@@ -4,8 +4,6 @@ For this interview, you will be asked to build a schedule comparison tool for an
 
 It is expected that no more than 3 hours be spent completing this work; We are interested in seeing both the coding style you use, as well as your knowledge of the Angular API.
 
-If there are any ambiguities about the requirements of this interview, please speak with either (Sean Graves)[mailto:sean@rideshark.com] or (Bryan Rayner)[mailto:bryan@rideshark.com].
-
 The schedule comparison tool would be used in a ride-matching application. Its 
 primary purpose is to visually compare the schedules of different users to one another.
 
@@ -17,6 +15,8 @@ It has the following functionality:
  - Displays whether or not a time matches with all other schedules in the group. 
    For example, if all schedules being compared leave on Monday mornings at 6:00 AM, the Monday AM schedules would have a checkmark and blue color, indicating that they match.
  - The image file provided shows how the component should look.
+
+If there are any ambiguities about the requirements of this interview, please speak with either (Sean Graves)[mailto:sean@rideshark.com] or (Bryan Rayner)[mailto:bryan@rideshark.com].
 
 ## Data schema
 
@@ -82,26 +82,13 @@ interface User {
 
 ## Implementation
 
-Modify the `index.html` file provided, to demonstrate your completed component. 
-You may demonstrate the comonent in any manner you choose (multiple components in 
-varying configurations may be loaded at once on the same page)
+Modify the `index.html`, 'scripts/app.js', and styles/app.css files provided and add your own to implement the design provided using AngularJS. 
 
-#### Requirements
-The following are requirements for this assignment:
- - This must work on Chrome 51. You can forget about IE and Firefox compatability for this assignment.
- - We expect that two schedules may be compared with one another.
- - You may divide your Javascript files in any way that makes sense to you.
- - We expect that the JSON data provided for user schedules, is loaded via an Angular Service.
- - We expect that the CSS is structured in an easy-to-follow manner.
- - We are using the Angular 1.5.x `component` API in our production app. 
-   We reccommend using this streamlined API, compared to the `directive` API. is used (Ng1 docs)[https://docs.angularjs.org/guide/component].
+The details of the implementation are up to you but here are some things we would like to see:
+ - Well organized javascript and css files. (split up the various components you are making so it makes sense to look at)
+ - You only need to compare 2 schedules (assume the first one you load is the current user), but we have provided multiple files. If you can make it compare 2+ schedules we will be impressed.
+ - Making use of the new Componenet api found in angular 1.5.x as opposed to just plain diretives.
+ - Using newer js featres (ES6) is fine and we love to see that you are interested in the latest tech.
+ - Creating a build process to package you scripts / styles and/or using something like SystemJS to load multiple js files.
+ - Object oriented Javascript, knowlege of things like prototype and the module pattern are good to see.
 
-#### Bonus points:
-We'd be impressed with the following improvements:
-
- - Allow more than two schedules to be compared
- - Use (Angular Material)[https://material.angularjs.org/latest/]
- - Use SystemJS or another module loader, instead of importing `<script>` tags by hand.
- - Use the `class` syntax.
- - Use the fat arrow (`()=>{}`) syntax instead of functions.
- - Use ES6 module syntax.
