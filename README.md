@@ -21,9 +21,10 @@ The `user-schedule-comparator` has the following functionality:
  - Allows users to select which person's schedule they are currently viewing
  - Displays whether or not a time matches with all other schedules in the group. 
    For example, if all schedules being compared leave on Monday mornings at 6:00 AM, the Monday AM schedules would have a checkmark and blue color, indicating that they match.
- - Allows the same data set to be viewed from multiple perspectives, based on who is logged in.
-   For example, a data set of Sally and Bob's schedules, would show "Me" instead of Bob's name when Bob is logged in, and "Me" instead of Sally's name when Sally is logged in.
+ - Allows the same data set to be viewed from multiple perspectives, based on a "logged in user".
+   For example, a data set of Sally and Bob's schedules, would show "Me" instead of Bob's name when Bob is "logged in", and "Me" instead of Sally's name when Sally is logged in.
    When no-one is logged in, Sally and Bob's names are both shown, without a "Me" substitution.
+   We don't expect you to actually do any authentication, just fake a logged in user vs not.
  - The image file provided shows how the component should look.
 
 ## Data schema
@@ -67,18 +68,18 @@ interface ScheduleDay {
     departPmTime: number;
 
     /**
-     * 
+     * Whether or not the user is commuting that day
      */
     isCommuting: false;
 }
 
 interface User {
     /**
-     * 
+     * The name of the user
      */
     name: string;
     /**
-     * 
+     * The ID of the user.
      */
     id: number;
 }
