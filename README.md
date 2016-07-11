@@ -4,7 +4,7 @@ For this interview, you will be asked to complete a `user-schedule-comparator` c
 
 It is expected that no more than 3 hours be spent completing this work; We are interested in seeing both the coding style you use, as well as your knowledge of the Angular API.
 
-If there are any ambiguities about the requirements of this interview, please speak with either ![Sean Graves](mailto:sean@rideshark.com) or [Bryan Rayner](mailto:bryan@rideshark.com).
+If there are any ambiguities about the requirements of this interview, please speak with either [Sean Graves](mailto:sean@rideshark.com) or [Bryan Rayner](mailto:bryan@rideshark.com).
 
 ## User Schedule Comparator
 ![The component shown in its two configurations](/design/user-schedule-comparator.design.png)
