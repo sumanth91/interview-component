@@ -24,23 +24,69 @@ The `user-schedule-comparator` has the following functionality:
  - Allows the same data set to be viewed from multiple perspectives, based on who is logged in.
    For example, a data set of Sally and Bob's schedules, would show "Me" instead of Bob's name when Bob is logged in, and "Me" instead of Sally's name when Sally is logged in.
    When no-one is logged in, Sally and Bob's names are both shown, without a "Me" substitution.
+ - The image file provided shows how the component should look.
 
-The `user-schedule-comparator` should have the final interface:
+## Data schema
 
-````html
+All user schedule data is located in JSON files in `data/user-schedules`. Treat these JSON files as a REST API end point.
 
-    <script>
-        // Data is loaded into Angular here from the provided data files.
-        // For this sample file, assume that an array of user schedule data is 
-        // exposed on the example $scope as 'userSchedules'
+The following TypeScript interface outlines the schema used for the data:
+````ts 
 
-        // Also assume that the currently logged in user is exposed on the example $scope
-        // as 'currentUser'. If the user is not logged in, this variable would be null.
-    </script>
 
-    <user-schedule-comparator user-schedules="userSchedules"
-                              current-user="currentUser"></user-schedule-comparator>
+interface Schedule {
+    /**
+     * The days of the schedule
+     */
+    days: ScheduleDay[];
+
+    /**
+     * The user
+     */
+    user: User;
+}
+
+interface ScheduleDay {
+    /**
+     * The name of the day
+     */
+    day: string;
+
+    /**
+     * The time that a user is leaving their home in the AM 
+     * 480 is 8:00 AM in the morning
+     * 1020 is 5:00 PM in the evening
+     */
+    departAmTime: number;
+
+    /**
+     * The time that a user is leaving their workplace in the PM 
+     * 480 is 8:00 AM in the morning
+     * 1020 is 5:00 PM in the evening
+     */
+    departPmTime: number;
+
+    /**
+     * 
+     */
+    isCommuting: false;
+}
+
+interface User {
+    /**
+     * 
+     */
+    name: string;
+    /**
+     * 
+     */
+    id: number;
+}
+
+
 ````
+
+ 
 
 ## Implementation
 
@@ -53,10 +99,11 @@ The following are requirements for this assignment:
  - This must work on Chrome 51. You can forget about IE and Firefox compatability for this assignment.
  - We expect that two schedules may be compared with one another.
  - We expect that the component may be able to be used with, and without, a logged in user.
- - We expect that multiple Javascript files are used, with a one-file-per-class convention.
+ - You may divide your Javascript files in any way that makes sense to you.
  - We expect that the JSON data provided for user schedules, is loaded via an Angular Service.
  - We expect that the CSS is structured in an easy-to-follow manner.
- - We expect that the Angular 1.5.x `component` API is used (Ng1 docs)[https://docs.angularjs.org/guide/component].
+ - We are using the Angular 1.5.x `component` API in our production app. 
+   We reccommend using this streamlined API, compared to the `directive` API. is used (Ng1 docs)[https://docs.angularjs.org/guide/component].
 
 #### Bonus points:
 We'd be impressed with the following improvements:
@@ -64,7 +111,6 @@ We'd be impressed with the following improvements:
  - Allow more than two schedules to be compared
  - Use (Angular Material)[https://material.angularjs.org/latest/]
  - Use SystemJS or another module loader, instead of importing `<script>` tags by hand.
- - Use the (Angular 2's Naming Conventions)[https://angular.io/docs/ts/latest/guide/style-guide.html] for file names
  - Use the `class` syntax.
  - Use the fat arrow (`()=>{}`) syntax instead of functions.
  - Use ES6 module syntax.
