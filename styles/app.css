@@ -1,1 +1,55 @@
 /* CSS starts here */
+#circle { width: 50px;float:left;height: 50px; background: #7F7F7F; -moz-border-radius: 50px; -webkit-border-radius: 50px; border-radius: 50px; }
+li:hover{
+ border-bottom: 2px solid #0269c2;
+
+};
+.circlediv {
+    width:60px;
+    height:60px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+li {
+    float: left;
+    padding:5px;
+    text-align:center;
+}
+
+.circlediv > span {
+    float:left;
+    margin-top:20px;
+}
+#schedule{
+background: #7f7f7F;
+height:40px;
+
+}
+.departTime {
+    margin-top: 15px;
+}
+.greyCircle {
+background: #7F7F7F !important;
+    color: white !important;
+
+}
+.blueCircle {
+    background: #0269c2 !important;
+    color: white !important;
+}
+
+.greyColor {
+    color: #7F7F7F;
+    margin-top:15px !important;
+}
+.blueColor {
+    color: #0269c2;
+    margin-top:15px !important;
+}

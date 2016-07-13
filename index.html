@@ -18,11 +18,77 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	</head>
-	<body>
+	<body ng-controller="groupScheduleCtrl">
+
+<!-- code for bootstrap modal-->
+<div id="groupSchedule" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Group Schedules
+        	</h4>
+        	<h6>Matching times are marked with <span class="glyphicon glyphicon-ok-sign"></span></h6>
+      </div>
+
+      <div class="modal-body">
+  
+      	<ul style="cursor:pointer">
+            <li class="circlediv"><span class="glyphicon glyphicon-chevron-left"></span></li>
+            <li class="circlediv" ng-repeat="u in usersList" ng-click="changeSelectedIndex($index,$event)">
+                <div id="circle"></div>
+                <div align="center" style="float:left;margin-top:20px;margin-left:6px;">{{u.user.name}}</div>
+            </li>
+            <li class="circlediv">
+                <div align="right">
+                    <span class="glyphicon glyphicon-chevron-right" style="float:left;margin-top:20px;"></span>
+                </div>
+            </li>
+        </ul>
+    
+      </div>
+      <div class="conainer">
+        <div class="row" style = "margin:0.5%;">
+            <div id="schedule" align = "left" >
+      	        <h4 style="color:white;padding:2%" ><b>{{name}}'s Schedule</b></h4>
+            </div>
+        </div>
+      </div>
+      <div class="row" style="margin:0.5%;">
+        <div class="col-md-3 col-md-offset-3"><b>Leaves At</b></div>
+        <div class="col-md-3 col-md-offset-3"><b>Departs At</b></div>
+      </div>
+
+        <div class="row" ng-repeat="u in daysArray" style="margin:1%;border-bottom:1px solid grey; padding-bottom: 5px">
+            <div  class="col-md-3">
+                <div id="circle" align="center" class="{{u.amColor == 'blueColor' || u.pmColor == 'blueColor' ? 'blueCircle' : 'greyCircle'}}"><div style="margin-top:25%">{{u.day}}</div></div>
+            </div>
+            <div ng-show = "u.isCommuting"  class="col-md-3 departTime {{u.amColor}}">
+                <b>{{u.departAmTime}} AM</b>
+                <span ng-show = "{{u.isAmMatched}}" class="glyphicon glyphicon-ok-sign"></span>
+            </div>
+            <div ng-show="u.isCommuting"  class="col-md-3 col-md-offset-3 departTime {{u.pmColor}}">
+                <b>{{u.departPmTime}} PM</b>
+                <span ng-show = "{{u.isPmMatched}}" class="glyphicon glyphicon-ok-sign"></span>
+            </div>
+            <div ng-hide="u.isCommuting" class="col-md-6 col-md-offset-3">
+                <b>Not Commuting this day</b>
+            </div>
+
+        </div>
+  
+
+
+        <div class="modal-footer">
+            <b><a href="#">Compare Times</a></b>
+        </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 		
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
 		<script type="text/javascript" src="./scripts/app.js"></script>
-
-
+    
 	</body>
 </html>

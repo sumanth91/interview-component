@@ -2,12 +2,12 @@
 	"days": [{
 		"day": "Mon",
 		"departAmTime": 480,
-		"departPmTime": 1020,
+		"departPmTime": 500,
         "isCommuting": true
 	}, {
 		"day": "Tues",
 		"departAmTime": 480,
-		"departPmTime": 1020,
+		"departPmTime": 500,
         "isCommuting": true
 	}, {
 		"day": "Wed",
@@ -22,7 +22,7 @@
 	}, {
 		"day": "Fri",
 		"departAmTime": 480,
-		"departPmTime": 1020,
+		"departPmTime": 500,
         "isCommuting": true
 	}, {
 		"day": "Sat",
